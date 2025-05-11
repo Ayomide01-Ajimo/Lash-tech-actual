@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blush Lash Studio - Premium Lash Services</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#E68AB1',secondary:'#FFD700'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+color: #4B5563;
+}
+.playfair {
+font-family: 'Playfair Display', serif;
+}
+.script {
+font-family: 'La Belle Aurore', cursive;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #FFD700;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+width: 100%;
+}
+.service-card {
+transition: all 0.3s ease;
+}
+.service-card:hover {
+transform: translateY(-5px);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+display: inline-block;
+width: 20px;
+height: 20px;
+background: white;
+border: 2px solid #FFB6C1;
+border-radius: 4px;
+position: relative;
+cursor: pointer;
+}
+.custom-checkbox.checked::after {
+content: '';
+position: absolute;
+width: 12px;
+height: 12px;
+background: #FFB6C1;
+border-radius: 2px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.custom-radio {
+display: inline-block;
+width: 20px;
+height: 20px;
+background: white;
+border: 2px solid #FFB6C1;
+border-radius: 50%;
+position: relative;
+cursor: pointer;
+}
+.custom-radio.checked::after {
+content: '';
+position: absolute;
+width: 12px;
+height: 12px;
+background: #FFB6C1;
+border-radius: 50%;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+background: #E5E7EB;
+border-radius: 12px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+.custom-switch.checked {
+background: #FFB6C1;
+}
+.custom-switch::after {
+content: '';
+position: absolute;
+width: 20px;
+height: 20px;
+background: white;
+border-radius: 50%;
+top: 2px;
+left: 2px;
+transition: transform 0.3s ease;
+}
+.custom-switch.checked::after {
+transform: translateX(26px);
+}
+.testimonial-card {
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+}
+.gallery-item {
+overflow: hidden;
+position: relative;
+}
+.gallery-item img {
+transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+transform: scale(1.05);
+}
+.gallery-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(255, 182, 193, 0.3);
+opacity: 0;
+transition: opacity 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.gallery-item:hover .gallery-overlay {
+opacity: 1;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Promotional Banner -->
+<div class="bg-primary py-2 text-white text-center relative">
+<div class="container mx-auto">
+<p class="text-sm md:text-base font-medium">✨ Special Offer: 10% Off Your First Appointment ✨ <button class="ml-2 text-secondary font-semibold hover:underline !rounded-button">Claim Now</button></p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="bg-white py-4 shadow-sm sticky top-0 z-50">
+<div class="container mx-auto px-4 flex items-center justify-between">
+<a href="#" class="text-3xl font-['La_Belle_Aurore'] text-primary">Blush Lash Studio</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link active text-gray-800 hover:text-primary transition">Home</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition">About</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition">Services</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition">Gallery</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition">Testimonials</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition">Contact</a>
+</div>
+<button class="bg-secondary text-white px-6 py-2 font-medium shadow hover:shadow-md transition !rounded-button whitespace-nowrap">Book Now</button>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-gray-800 ri-lg"></i>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-[700px] overflow-hidden">
+<div style="background-image: url('https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/67efe034db5d9272002f3f29bd20a3dd.png');" class="absolute inset-0 bg-cover bg-center"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10">
+<div class="w-full max-w-2xl">
+<h1 class="playfair text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-3">Enhance</h1>
+<h2 class="script text-4xl md:text-5xl lg:text-6xl text-primary mb-8">Your Natural Beauty</h2>
+<p class="text-xl md:text-2xl text-white/90 mb-10">Premium lash services tailored to elevate your natural features with elegance and precision.</p>
+<div class="flex flex-col sm:flex-row gap-6">
+<button class="bg-primary text-white px-10 py-4 text-lg font-medium shadow-md hover:shadow-lg transition !rounded-button whitespace-nowrap">Book Your Experience</button>
+<button class="border-2 border-white text-white px-10 py-4 text-lg font-medium hover:bg-white/10 transition !rounded-button whitespace-nowrap">View Our Work</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Services -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="playfair text-3xl md:text-4xl font-bold text-gray-900 mb-3">Our Premium Services</h2>
+<p class="script text-xl text-primary">Enhance your natural beauty</p>
+<div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Classic Lashes -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/49e189e5e9cc706bca2f071043773fff.png" alt="Classic Lashes" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="playfair text-xl font-bold text-gray-900">Classic Lashes</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">$120</span>
+</div>
+<p class="text-gray-600 mb-4">Natural and timeless. Ideal for clients who want a subtle, everyday enhancement.</p>
+<div class="flex items-center text-sm text-gray-500 mb-4">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span>90-120 minutes</span>
+</div>
+<button class="w-full bg-secondary text-white py-2 font-medium transition !rounded-button whitespace-nowrap">Book Now</button>
+</div>
+</div>
+<!-- Hybrid Lashes -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/4bef0b711f42eac6cbcd507f29e77181.png" alt="Hybrid Lashes" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="playfair text-xl font-bold text-gray-900">Hybrid Lashes</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">$150</span>
+</div>
+<p class="text-gray-600 mb-4">The perfect blend of classic and volume. Adds texture and light fullness while keeping a natural finish.</p>
+<div class="flex items-center text-sm text-gray-500 mb-4">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span>120-150 minutes</span>
+</div>
+<button class="w-full bg-secondary text-white py-2 font-medium transition !rounded-button whitespace-nowrap">Book Now</button>
+</div>
+</div>
+<!-- Volume Lashes -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/62df938195294f685026d5e5aeb05744.png" alt="Volume Lashes" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="playfair text-xl font-bold text-gray-900">Volume Lashes</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">$180</span>
+</div>
+<p class="text-gray-600 mb-4">Bold and glamorous. Multiple lightweight extensions are fanned onto each lash for a dramatic effect.</p>
+<div class="flex items-center text-sm text-gray-500 mb-4">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span>150-180 minutes</span>
+</div>
+<button class="w-full bg-secondary text-white py-2 font-medium transition !rounded-button whitespace-nowrap">Book Now</button>
+</div>
+</div>
+<!-- Lash Lift & Tint -->
+<div class="service-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/a70e261e5463ac3f1d39431dd6b63e56.png" alt="Lash Lift & Tint" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="playfair text-xl font-bold text-gray-900">Lash Lift & Tint</h3>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">$90</span>
+</div>
+<p class="text-gray-600 mb-4">A natural curl and color boost for your own lashes. No extensions—just enhanced beauty with minimal upkeep.</p>
+<div class="flex items-center text-sm text-gray-500 mb-4">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-time-line"></i>
+</div>
+<span>60-75 minutes</span>
+</div>
+<button class="w-full bg-secondary text-white py-2 font-medium transition !rounded-button whitespace-nowrap">Book Now</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-white text-primary border-2 border-primary px-8 py-3 font-medium hover:bg-primary/5 transition !rounded-button whitespace-nowrap">View All Services</button>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-2 lg:order-1">
+<h2 class="playfair text-3xl md:text-4xl font-bold text-gray-900 mb-3">Welcome to Blush Lash Studio</h2>
+<p class="script text-xl text-primary mb-6">Where beauty meets expertise</p>
+<p class="text-gray-600 mb-4">At Blush Lash Studio, we believe that every client deserves a personalized experience that enhances their natural beauty. Our skilled technicians are dedicated to providing premium lash services in a relaxing, luxurious environment.</p>
+<p class="text-gray-600 mb-6">With over 5 years of experience and continuous training in the latest techniques, we ensure that each client leaves our studio feeling confident and beautiful.</p>
+<div class="grid grid-cols-3 gap-4 mb-8">
+<div class="text-center p-4 bg-gray-50 rounded-lg">
+<div class="text-2xl font-bold text-primary mb-1">500+</div>
+<div class="text-sm text-gray-600">Happy Clients</div>
+</div>
+<div class="text-center p-4 bg-gray-50 rounded-lg">
+<div class="text-2xl font-bold text-primary mb-1">5</div>
+<div class="text-sm text-gray-600">Years Experience</div>
+</div>
+<div class="text-center p-4 bg-gray-50 rounded-lg">
+<div class="text-2xl font-bold text-primary mb-1">4.9</div>
+<div class="text-sm text-gray-600">Average Rating</div>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 font-medium shadow hover:shadow-md transition !rounded-button whitespace-nowrap">Learn More About Us</button>
+</div>
+<div class="order-1 lg:order-2">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/51cbbab43b680eabb9dbea797b249297.png" alt="About Blush Lash Studio" class="w-full h-auto rounded-lg shadow-lg">
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="playfair text-3xl md:text-4xl font-bold text-gray-900 mb-3">Our Work</h2>
+<p class="script text-xl text-primary">Before & After Transformations</p>
+<div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Gallery Item 1 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/1d3e917f8e83230a9b084b26243b18eb.png" alt="Classic Lashes Before & After" class="w-full h-80 object-cover object-top">
+<div class="gallery-overlay">
+<div class="text-white text-center">
+<p class="font-medium">Classic Lashes</p>
+<p class="text-sm">Before & After</p>
+</div>
+</div>
+</div>
+<!-- Gallery Item 2 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/fac5b23665e60ae32431b05e2b72ccea.png" alt="Hybrid Lashes Before & After" class="w-full h-80 object-cover object-top">
+<div class="gallery-overlay">
+<div class="text-white text-center">
+<p class="font-medium">Hybrid Lashes</p>
+<p class="text-sm">Before & After</p>
+</div>
+</div>
+</div>
+<!-- Gallery Item 3 -->
+<div class="gallery-item rounded-lg overflow-hidden shadow-md">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/1e1748bd0b05e715c7f3e5ad11632ef9.png" alt="Volume Lashes Before & After" class="w-full h-80 object-cover object-top">
+<div class="gallery-overlay">
+<div class="text-white text-center">
+<p class="font-medium">Volume Lashes</p>
+<p class="text-sm">Before & After</p>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-white text-primary border-2 border-primary px-8 py-3 font-medium hover:bg-primary/5 transition !rounded-button whitespace-nowrap">View Full Gallery</button>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="playfair text-3xl md:text-4xl font-bold text-gray-900 mb-3">Client Love</h2>
+<p class="script text-xl text-primary">What our clients say about us</p>
+<div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="testimonial-card bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="flex items-center text-secondary mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-600 italic mb-4">"I've been going to Blush Lash Studio for over a year now, and I'm always amazed by the results. My lashes look natural yet dramatic, and the technicians are so professional and friendly."</p>
+<div class="text-right">
+<p class="font-medium text-gray-900">Emily J.</p>
+<p class="text-sm text-primary">Volume Lashes</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="flex items-center text-secondary mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-600 italic mb-4">"As someone with sensitive eyes, I was nervous about getting lash extensions. The team at Blush was so understanding and took extra care. My lash lift looks amazing and feels so light!"</p>
+<div class="text-right">
+<p class="font-medium text-gray-900">Sarah W.</p>
+<p class="text-sm text-primary">Lash Lift & Tint</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="flex items-center text-secondary mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-600 italic mb-4">"The hybrid lashes I got for my wedding were perfect - not too dramatic but definitely made my eyes pop in photos. The studio is so clean and relaxing too!"</p>
+<div class="text-right">
+<p class="font-medium text-gray-900">Michelle C.</p>
+<p class="text-sm text-primary">Hybrid Lashes</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="p-8 md:p-12">
+<h2 class="playfair text-3xl font-bold text-gray-900 mb-3">Book Your Appointment</h2>
+<p class="text-gray-600 mb-6">Schedule your lash service and experience the Blush difference.</p>
+<form>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2" for="service">Select Service</label>
+<div class="relative">
+<select id="service" class="appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+<option>Classic Lashes - $120</option>
+<option>Hybrid Lashes - $150</option>
+<option>Volume Lashes - $180</option>
+<option>Lash Lift & Tint - $90</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2" for="date">Preferred Date</label>
+<input type="date" id="date" class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+</div>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2" for="time">Preferred Time</label>
+<div class="relative">
+<select id="time" class="appearance-none w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+<option>9:00 AM</option>
+<option>10:00 AM</option>
+<option>11:00 AM</option>
+<option>12:00 PM</option>
+<option>1:00 PM</option>
+<option>2:00 PM</option>
+<option>3:00 PM</option>
+<option>4:00 PM</option>
+<option>5:00 PM</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label class="block text-gray-700 text-sm font-medium mb-2" for="name">Full Name</label>
+<input type="text" id="name" class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 text-sm font-medium mb-2" for="phone">Phone Number</label>
+<input type="tel" id="phone" class="w-full bg-gray-50 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none focus:bg-white focus:border-primary">
+</div>
+<div class="mb-6">
+<div class="flex items-center">
+<div class="custom-checkbox" id="firstTimeCheckbox"></div>
+<label class="ml-2 text-gray-700 text-sm" for="firstTimeCheckbox">This is my first appointment (10% discount)</label>
+</div>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 font-medium shadow hover:shadow-md transition !rounded-button whitespace-nowrap">Book Appointment</button>
+</form>
+</div>
+<div class="hidden md:block relative h-full">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/0e271c3183042335eb0fb8aff626cd3e.png" alt="Lash Studio Interior" class="absolute inset-0 w-full h-full object-cover object-top">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram Feed -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="playfair text-3xl md:text-4xl font-bold text-gray-900 mb-3">Follow Our Journey</h2>
+<p class="script text-xl text-primary">@blushlashstudio</p>
+<div class="w-20 h-1 bg-secondary mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+<div class="gallery-item rounded-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/1d3e917f8e83230a9b084b26243b18eb.png" alt="Instagram Post" class="w-full h-40 object-cover object-top">
+<div class="gallery-overlay">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line text-white ri-lg"></i>
+</div>
+</div>
+</div>
+<div class="gallery-item rounded-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/112b99679404f065860e4ea14a2dd839.png" alt="Instagram Post" class="w-full h-40 object-cover object-top">
+<div class="gallery-overlay">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line text-white ri-lg"></i>
+</div>
+</div>
+</div>
+<div class="gallery-item rounded-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/f42ccdcb2bb657a848b43781da17b17f.png" alt="Instagram Post" class="w-full h-40 object-cover object-top">
+<div class="gallery-overlay">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line text-white ri-lg"></i>
+</div>
+</div>
+</div>
+<div class="gallery-item rounded-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/74ef83a76861e62d2ec0ae105f891137.png" alt="Instagram Post" class="w-full h-40 object-cover object-top">
+<div class="gallery-overlay">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line text-white ri-lg"></i>
+</div>
+</div>
+</div>
+<div class="gallery-item rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=lash%20products%20and%20tools%20arranged%20beautifully%2C%20professional%20beauty%20supplies%2C%20lash%20studio%20equipment%2C%20feminine%20and%20elegant%2C%20instagram%20worthy%20flat%20lay%2C%20beauty%20salon%20content&width=300&height=300&seq=21&orientation=squarish" alt="Instagram Post" class="w-full h-40 object-cover object-top">
+<div class="gallery-overlay">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line text-white ri-lg"></i>
+</div>
+</div>
+</div>
+<div class="gallery-item rounded-lg overflow-hidden">
+<img src="https://static.readdy.ai/image/92a63dccfd8ac39682f6f1dc4bfb924c/1219a08e05ddfe8e379c502461978965.png" alt="Instagram Post" class="w-full h-40 object-cover object-top">
+<div class="gallery-overlay">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-line text-white ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-8">
+<a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+<span>Follow us on Instagram</span>
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Contact Section & Footer -->
+<footer class="bg-gray-50 py-16">
+<div class="container mx-auto px-4">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Column 1: Logo & About -->
+<div class="lg:col-span-1">
+<a href="#" class="text-3xl font-['La_Belle_Aurore'] text-primary block mb-4">Blush Lash Studio</a>
+<p class="text-gray-600 mb-6">Enhancing your natural beauty with premium lash services in a relaxing, luxurious environment.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition">
+<i class="ri-tiktok-line"></i>
+</a>
+</div>
+</div>
+<!-- Column 2: Quick Links -->
+<div class="lg:col-span-1">
+<h3 class="font-medium text-gray-900 mb-4">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-600 hover:text-primary transition">Home</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition">About Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition">Services</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition">Gallery</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition">Book Now</a></li>
+</ul>
+</div>
+<!-- Column 3: Contact Info -->
+<div class="lg:col-span-1">
+<h3 class="font-medium text-gray-900 mb-4">Contact Info</h3>
+<ul class="space-y-3">
+<li class="flex items-center text-gray-600">
+<i class="ri-map-pin-line mr-2"></i>
+123 Beauty Lane, Suite 201<br>Los Angeles, CA 90210
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-phone-line mr-2"></i>
+(555) 123-4567
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-mail-line mr-2"></i>
+info@blushlashstudio.com
+</li>
+</ul>
+</div>
+<!-- Column 4: Hours -->
+<div class="lg:col-span-1">
+<h3 class="font-medium text-gray-900 mb-4">Business Hours</h3>
+<ul class="space-y-3 text-gray-600">
+<li>Monday - Friday: 9:00 AM - 7:00 PM</li>
+<li>Saturday: 10:00 AM - 5:00 PM</li>
+<li>Sunday: Closed</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Bar -->
+<div class="mt-12 pt-8 border-t border-gray-200">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 Blush Lash Studio. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 hover:text-primary text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-500 hover:text-primary text-sm">Terms of Service</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Chat Button -->
+<a href="#" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center z-50 hover:bg-green-600 transition">
+<i class="ri-whatsapp-line ri-xl"></i>
+</a>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Custom Checkbox
+const checkboxes = document.querySelectorAll('.custom-checkbox');
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('click', function() {
+this.classList.toggle('checked');
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Custom Radio
+const radios = document.querySelectorAll('.custom-radio');
+radios.forEach(radio => {
+radio.addEventListener('click', function() {
+const name = this.getAttribute('data-name');
+document.querySelectorAll(`.custom-radio[data-name="${name}"]`).forEach(r => {
+r.classList.remove('checked');
+});
+this.classList.add('checked');
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Custom Switch
+const switches = document.querySelectorAll('.custom-switch');
+switches.forEach(switchEl => {
+switchEl.addEventListener('click', function() {
+this.classList.toggle('checked');
+});
+});
+});
+</script>
+</body>
+</html>
